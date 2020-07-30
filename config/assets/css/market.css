@@ -1,0 +1,532 @@
+@import url("main.css");
+.container.mkt {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42));
+}
+
+.container.mkt h3#info {
+    color: #fff;
+    line-height: 47px;
+    height: 100%;
+    padding: 200px 0px 100px;
+    font-size: 25px;
+}
+
+.container.mkt h3#info a {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 50px;
+    margin-top: 45px;
+    display: inline-block;
+    border-radius: 15px;
+    font-size: 21px;
+    text-decoration: none;
+    font-weight: 400;
+    background: rgba(25, 184, 237, 0.54);
+    transition: 0.6s;
+}
+
+.container.mkt h3#info a:hover {
+    background: rgb(81, 97, 195);
+}
+
+#home {
+    height: 450px;
+}
+
+#home .carousel-inner {
+    height: 100%;
+}
+
+#home .carousel-inner div#requestBackground {
+    width: 100%;
+    height: 100%;
+}
+
+#home .carousel-inner .req_body {
+    width: 100%;
+    height: 100%;
+}
+
+#home .item .fill p {
+    top: 150px;
+    left: 10%;
+    position: absolute;
+    background-color: rgba(25, 184, 237, 0.7);
+    color: #fff;
+    font-size: 25px;
+    padding: 40px;
+    font-weight: 400;
+    width: 40%;
+    display: table;
+    line-height: 40px;
+    border-radius: 5px;
+}
+
+#home .item .fill {
+    background-image: -moz-linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-1.webp');
+    background-image: -webkit-linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-1.webp');
+    background-image: -o-linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-1.webp');
+    background-image: linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-1.webp');
+    background-size: 100% 900px;
+    background-position: bottom;
+    border-radius: 0;
+}
+
+#home .item:nth-of-type(2) .fill {
+    background-image: -moz-linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-2.webp');
+    background-image: -webkit-linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-2.webp');
+    background-image: -o-linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-2.webp');
+    background-image: linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-2.webp');
+    background-size: 100% 800px;
+    background-position: top;
+}
+
+#home .item:nth-of-type(3) .fill {
+    background-image: -moz-linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-3.webp');
+    background-image: -webkit-linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-3.webp');
+    background-image: -o-linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-3.webp');
+    background-image: linear-gradient(rgba(46, 45, 45, 0.43), rgba(46, 45, 45, 0.62)), url('../images/255c6698622533s-3.webp');
+    background-size: 100% 900px;
+    background-position: center;
+}
+
+.hcSlider .carousel-inner {
+    height: 100%;
+}
+
+.hcSlider .carousel-inner .item .fill {
+    padding-top: 235px;
+}
+
+.hcSlider .carousel-inner .item .fill h2 {
+    color: rgb(132, 206, 230);
+    font-size: 52px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.hcSlider .carousel-inner .item:nth-of-type(1) .fill {
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Biopsy\ Needles.png');
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Biopsy\ Needles.png');
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Biopsy\ Needles.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Biopsy\ Needles.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hcSlider .carousel-inner .item:nth-of-type(2) .fill {
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Cardiac.png');
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Cardiac.png');
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Cardiac.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Cardiac.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hcSlider .carousel-inner .item:nth-of-type(3) .fill {
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Catheters.png');
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Catheters.png');
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Catheters.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Catheters.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hcSlider .carousel-inner .item:nth-of-type(4) .fill {
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Dialysis.png');
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Dialysis.png');
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Dialysis.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Dialysis.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hcSlider .carousel-inner .item:nth-of-type(5) .fill {
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Hospital\ Furniture.png');
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Hospital\ Furniture.png');
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Hospital\ Furniture.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Hospital\ Furniture.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hcSlider .carousel-inner .item:nth-of-type(6) .fill {
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Medical\ Apparel.png');
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Medical\ Apparel.png');
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Medical\ Apparel.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Medical\ Apparel.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hcSlider .carousel-inner .item:nth-of-type(7) .fill {
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Radiology\ Consumables.png');
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Radiology\ Consumables.png');
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Radiology\ Consumables.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.42)), url('../images/SG9zcGl0YWwgQ29uc3VtYWJsZXMg/Radiology\ Consumables.png');
+    background-size: cover;
+    background-position: center;
+}
+
+section#notice {
+    display: table;
+    color: rgb(25, 184, 237);
+    border-bottom: 1px solid rgba(90, 90, 90, 0.17);
+    background: rgba(0, 0, 0, 0.63);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    transition: 0.6s;
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -ms-transition: 0.6s;
+    -o-transition: 0.6s;
+}
+
+.notice-holder {
+    background: #fff;
+    border-radius: 16px;
+    padding: 45px;
+    display: inline-block;
+    width: 50%;
+    top: 150px;
+}
+
+.notice_left {
+    padding: 0px 14px;
+    border-radius: 2px;
+    width: auto;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+.notice_left i {
+    font-size: 43px;
+}
+
+.notice_right {
+    display: inline-block;
+    width: 90%;
+}
+
+.notice_right p {
+    font-size: 13px;
+    line-height: 25px;
+    color: rgb(25, 184, 237);
+    font-weight: 700;
+}
+
+#title i {
+    position: absolute;
+    right: 5%;
+    z-index: 10;
+    top: 30%;
+    font-size: 25px;
+}
+
+section#query {
+    display: table;
+    background: #fff;
+    width: 100%;
+    padding: 80px 90px;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+#query .contactform h1 {
+    color: rgb(25, 184, 237);
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.contactform {
+    width: 60%;
+    text-align: left;
+    margin-top: 0px;
+    padding: 0px 45px;
+    display: inline-table;
+    background: rgb(255, 255, 255);
+    border-right: 1px solid rgb(224, 224, 224);
+}
+
+#asteriks {
+    color: rgb(25, 184, 237);
+}
+
+.query {
+    display: table;
+    width: 100%;
+}
+
+.contactform h2 {
+    color: #a0a0a0;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 35px;
+    text-align: left;
+    display: block;
+    font-style: italic;
+}
+
+.contactform form input {
+    width: 84%;
+    margin: 10px 0px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.06), -4px 4px 5px rgba(0, 0, 0, 0.07);
+    padding-left: 20px;
+    padding: 17px 25px;
+    border: 1px solid #e2e2e2;
+    border-radius: 30px;
+    border-top-left-radius: 0;
+}
+
+.contactform input#del_date {
+    padding-right: 40px;
+}
+
+.contactform form input:valid {
+    border-color: rgb(93, 182, 104);
+}
+
+.form-group.minor {
+    border: 1px solid rgb(224, 224, 224);
+    padding: 18px 22px;
+    border-radius: 7px;
+}
+
+.form-group.minor #minor-holder {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.form-group.minor #minor-holder input#prod_name {
+    width: 98%;
+}
+
+.product_data .form-group.desc_data {
+    margin: 0;
+    width: 80%;
+    display: inline-block;
+}
+
+.product_data .form-group.desc_img {
+    width: 12%;
+    display: inline-table;
+    top: 10px;
+    margin: 0;
+    margin-left: 9px;
+}
+
+.query h3 {
+    margin: 40px 0px 20px;
+    color: rgb(125, 125, 125);
+}
+
+.query h3:nth-of-type(1) {
+    margin-bottom: 10px;
+}
+
+.form-group.desc_data input {
+    width: 46%;
+    margin-right: 20px;
+}
+
+.form-group.desc_data input:nth-of-type(3),
+.form-group.desc_data input:nth-of-type(1) {
+    margin-right: 0;
+}
+
+.form-group.desc_img label {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: rgb(202, 202, 202);
+    top: -30px;
+    width: 100%;
+}
+
+.form-group.desc_img #img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border: 1px solid rgb(241, 241, 241);
+    overflow: hidden;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: rgb(241, 241, 241);
+}
+
+.form-group.desc_img #img i {
+    position: absolute;
+    font-size: 40px;
+    color: rgb(202, 202, 202);
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 0%;
+    height: 100%;
+    padding-top: 14px;
+}
+
+.form-group.desc_img #img img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+}
+
+.form-group.desc_img #img input {
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+    box-shadow: none;
+    margin: 0;
+}
+
+a.remove_field {
+    color: rgb(26, 184, 237);
+    position: absolute;
+    right: -20px;
+    top: -6px;
+    z-index: 1;
+    line-height: 10px;
+    font-size: 40px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+a#add_button {
+    background: rgb(25, 184, 237);
+    padding: 14px 15px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .container.mkt h3#info {
+        padding-top: 150px;
+        font-size: 17px;
+        line-height: 28px;
+    }
+    .container.mkt h3#info a {
+        line-height: unset;
+        padding: 10px 35px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    .hcSlider .carousel-inner .item .fill {
+        padding-top: 176px;
+    }
+    .hcSlider .carousel-inner .item .fill h2 {
+        font-size: 23px;
+    }
+    #home .item .fill {
+        background-size: cover;
+    }
+    #home .item:nth-of-type(2) .fill {
+        background-size: cover;
+    }
+    #home .item:nth-of-type(3) .fill {
+        background-size: cover;
+    }
+    #home .item .fill p {
+        font-size: 13px;
+        padding: 20px 35px;
+        line-height: 24px;
+        width: 70%;
+        left: 0;
+        top: 82px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        font-weight: 700;
+    }
+    div#home {
+        overflow: hidden;
+    }
+    #title h1#pagin {
+        padding: 20px 30px 20px 30px;
+    }
+    section#notice {
+        padding: 30px;
+        padding-top: 15px;
+    }
+    .notice-holder {
+        width: 99%;
+        top: 99px;
+        padding: 40px;
+    }
+    .notice_left i {
+        font-size: 25px;
+    }
+    .notice_right {
+        width: 100%;
+    }
+    .notice_right p {
+        font-size: 11px;
+        line-height: 23px;
+    }
+    #title i {
+        right: 10%;
+        z-index: 10;
+        top: 21%;
+        font-size: 20px;
+    }
+    section#query {
+        padding: 30px 10%;
+    }
+    .contactform {
+        width: 100%;
+        padding-right: 0px;
+        border-right: 0;
+        padding-left: 0;
+    }
+    .contactform form input {
+        width: 100%;
+    }
+    .form-group.minor {
+        padding: 10px 15px;
+    }
+    .query h3 {
+        font-weight: bolder;
+        margin-top: 27px;
+    }
+    #query .contactform h1 {
+        font-size: 30px;
+    }
+    .form-group.desc_img #img input {
+        margin-bottom: 10px;
+    }
+    .form-group.desc_data input {
+        width: 47.7%;
+        margin-right: 9px;
+    }
+    .product_data {
+        display: table;
+    }
+    .form-group.desc {
+        margin: 0 0 10px;
+        padding: 10px 0px;
+    }
+    .product_data .form-group.desc_data {
+        width: 100%;
+    }
+    .form-group.minor #minor-holder input#prod_name {
+        width: 100%;
+    }
+    a.remove_field {
+        top: 3px;
+    }
+}

@@ -1,0 +1,760 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap&subset=cyrillic,greek,vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+@import url("//cdn.materialdesignicons.com/5.1.45/css/materialdesignicons.min.css");
+body,
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 13px;
+    width: 100%;
+    height: 100%;
+    display: table;
+    position: absolute;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(125, 125, 125);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(19, 37, 53);
+}
+
+::placeholder {
+    color: rgba(84, 86, 84, 0.6);
+    font-size: 11px;
+}
+
+* {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+fieldset {
+    border: 1px solid rgb(218, 218, 218);
+    padding: 45px;
+    border-radius: 15px;
+    box-shadow: 0 0 13px 0px rgba(0, 0, 0, 0.19);
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    font-size: 13px;
+    padding: 10px 10px;
+    width: 20%;
+    margin: 20px 0px;
+    color: rgb(88, 88, 88);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+input:read-only {
+    color: rgb(122, 122, 122);
+    cursor: not-allowed;
+}
+
+input:invalid:focus {
+    border-color: rgb(218, 95, 53);
+}
+
+input:valid {
+    border-color: rgb(93, 182, 104);
+}
+
+textarea {
+    border: none;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    font-size: 13px;
+    padding: 10px 10px;
+    width: 50%;
+    margin: 20px 0px;
+    color: rgb(88, 88, 88);
+    resize: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#error {
+    color: rgb(218, 95, 53);
+    font-size: 12px;
+    margin: 0px;
+    font-family: abel;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+#error span {
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
+#success {
+    color: rgb(93, 182, 104);
+    font-size: 12px;
+    margin: 15px 0px 15px;
+    font-family: abel;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.16);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 0;
+}
+
+th {
+    padding: 20px;
+    background: rgb(25, 184, 237);
+    color: #ffffff;
+    border: 1px solid rgb(25, 184, 237);
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    padding: 25px 20px;
+    border: 1px solid rgb(234, 234, 234);
+}
+
+td p {
+    font-weight: 600;
+    color: rgb(88, 88, 88);
+    font-size: 12px;
+    font-style: italic;
+}
+
+td a {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-weight: 800;
+    color: rgb(25, 184, 237);
+    letter-spacing: 1px;
+}
+
+td a:hover {
+    color: rgb(81, 97, 195);
+}
+
+td input {
+    width: 100%;
+    margin: 0;
+    border-bottom: 0;
+    padding-top: 20px;
+    transition: 0.6s;
+}
+
+td input:focus {
+    box-shadow: inset -1px -1px 4px rgba(0, 0, 0, 0.08), inset 4px 4px 4px rgba(0, 0, 0, 0.26);
+    background: rgba(255, 255, 255, 0.048);
+}
+
+h3#info {
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+    color: rgb(125, 125, 125);
+    padding: 200px 0px;
+}
+
+h3#info a {
+    text-decoration: underline;
+}
+
+button {
+    background: #198bed;
+    border: 0;
+    padding: 14px 36px;
+    color: #fff;
+    font-weight: 700;
+    margin-right: 20px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+button:hover {
+    background-color: #ffffff;
+    box-shadow: inset -1px -1px 4px rgba(0, 0, 0, 0.08), inset 4px 4px 4px rgba(0, 0, 0, 0.26);
+    color: rgb(25, 184, 237);
+}
+
+
+/*=======================================================
+=========================================================
+FOR ANY PRESENT SLIDERS
+=========================================================
+=========================================================*/
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 82%;
+}
+
+.carousel-inner>.item {
+    position: absolute;
+    display: none;
+    -webkit-transition: .6s ease-in-out left;
+    -o-transition: .6s ease-in-out left;
+    transition: .6s ease-in-out left;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner>.active,
+.carousel-inner>.next,
+.carousel-inner>.prev {
+    display: block
+}
+
+.carousel-inner>.active {
+    left: 0
+}
+
+.carousel-inner .item .fill {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.carousel-inner>.next,
+.carousel-inner>.prev {
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+.carousel-inner>.next {
+    left: 100%
+}
+
+.carousel-inner>.prev {
+    left: -100%
+}
+
+.carousel-inner>.next.left,
+.carousel-inner>.prev.right {
+    left: 0
+}
+
+.carousel-inner>.active.left {
+    left: -100%
+}
+
+.carousel-inner>.active.right {
+    left: 100%
+}
+
+.carousel-control-hold {
+    position: absolute;
+    bottom: 0;
+    display: table;
+    right: 0;
+}
+
+.carousel-control {
+    font-size: 20px;
+    background-color: rgba(24, 137, 236, 0.47);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 13px 18px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 12%;
+    right: 2%;
+    line-height: 25px;
+    border: 1px solid rgb(24, 137, 236);
+    transition: 0.6s;
+}
+
+.carousel-control.right {
+    /*! right: 3%; */
+    bottom: 2%;
+}
+
+.carousel-control:hover {
+    background-color: rgb(24, 137, 236);
+}
+
+.carousel-control .icon-prev:before {
+    content: '\f141';
+    font-family: "Material Design Icons";
+}
+
+.carousel-control .icon-next:before {
+    content: '\f142';
+    font-family: "Material Design Icons";
+}
+
+.carousel-indicators {
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    height: 17%;
+    border-top: 1px solid rgb(228, 228, 228);
+}
+
+.carousel-indicators li {
+    width: 7px;
+    height: 7px;
+    background: rgb(24, 137, 236);
+    display: inline-block;
+    margin: 0px 0px;
+    border: 1px solid rgb(24, 137, 236);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.6s;
+}
+
+.carousel-indicators li.active {
+    background: rgb(24, 137, 236);
+    width: 25px;
+    border-radius: 23px;
+}
+
+
+/*=======================================================
+=========================================================
+ANIMATIONS
+=========================================================
+=========================================================*/
+
+@-webkit-keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.75;
+    }
+    90% {
+        opacity: 0.95;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.75;
+    }
+    90% {
+        opacity: 0.95;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        top: -10px;
+    }
+    35% {
+        top: 0px;
+    }
+    70% {
+        top: 10px
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        top: -10px;
+    }
+    35% {
+        top: 0px;
+    }
+    70% {
+        top: 10px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+}
+
+.fader {
+    animation-name: fade;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+
+/*=======================================================
+=========================================================
+FOR BODY
+=========================================================
+=========================================================*/
+
+.side_menu {
+    left: -20%;
+    height: 100%;
+    position: absolute;
+    width: 20%;
+    transition: 0.6s;
+    background: rgb(255, 255, 255);
+    z-index: 99999;
+    overflow: hidden;
+}
+
+.side_menu.show {
+    width: 20%;
+    left: 0;
+    position: fixed;
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.18);
+}
+
+.navigation-options {
+    height: 100%;
+    padding: 18px 0px;
+}
+
+ul#side-links {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+ul#side-links li a {
+    padding: 23px 30px;
+    width: 100%;
+    display: inline-block;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    transition: 0.6s;
+    margin-left: 20px;
+    font-size: 13px;
+    color: rgb(25, 184, 237);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+ul#side-links li a i {
+    font-size: 20px;
+    top: 3px;
+    margin-right: 9px;
+}
+
+ul#side-links li a:hover,
+ul#side-links li a.active {
+    box-shadow: inset 1px 1px 10px rgba(51, 51, 51, 0.24);
+    color: rgb(25, 184, 237);
+}
+
+#ref {
+    height: 100%;
+    width: 100%;
+    display: table;
+    left: 0;
+    transition: 0.6s;
+}
+
+#ref.rez {
+    left: 20%;
+}
+
+.ref {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+navigation {
+    display: table;
+    width: 100%;
+    padding: 20px 3%;
+    z-index: 9999;
+}
+
+.navigation,
+.nav-bar {
+    display: table;
+    width: 100%;
+    height: auto;
+}
+
+.nav-bar .nav-bar-menu,
+.nav-bar .nav-bar-notif {
+    float: left;
+    padding: 4px 20px;
+    margin-right: 5px;
+    padding-left: 0;
+    cursor: pointer;
+}
+
+.nav-bar .nav-bar-menu i,
+.nav-bar .nav-bar-notif i {
+    font-size: 33px;
+    color: rgb(25, 184, 237);
+    transition: 0.6s;
+}
+
+.nav-bar .nav-bar-menu i:hover {
+    color: rgb(24, 137, 236);
+}
+
+.nav-bar .nav-bar-logo {
+    float: left;
+    overflow: hidden;
+    width: 19%;
+}
+
+.nav-bar .nav-bar-logo #logo {
+    max-width: 100%;
+    display: table;
+}
+
+.nav-bar .nav-bar-logo #logo img {
+    width: 100%;
+    display: block;
+}
+
+.nav-bar .nav-bar-notif {
+    float: right;
+}
+
+.divWrap {
+    width: 100%;
+    height: 100%;
+    display: table;
+    left: 0;
+    overflow: hidden;
+}
+
+div#body {
+    display: table;
+    width: 100%;
+    padding: 0 3%;
+    margin: 0;
+    height: 100%;
+    padding: 50px 50px;
+}
+
+.bodyLeft_top {
+    text-align: center;
+    margin-bottom: 40px;
+    background: #fff;
+}
+
+.bodyLeft_botm {
+    background: #fff;
+}
+
+.bodyLeft {
+    width: 68%;
+    padding: 45px;
+    float: left;
+    border-radius: 10px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.16);
+    margin-right: 20px;
+}
+
+div#bott_left,
+div#bott_right {
+    width: 100%;
+    color: rgb(78, 78, 78);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+div#bott_left i {
+    color: rgb(24, 137, 236);
+    margin-right: 5px;
+    font-size: 18px;
+    top: 2px;
+}
+
+#bott_right span {
+    font-size: 11px;
+    padding: 5px 10px;
+    background: rgb(171, 171, 171);
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    display: inline-block;
+    margin: 3px 3px 3px 0px;
+    font-weight: 500;
+}
+
+.bodyRight {
+    width: 30%;
+    float: left;
+    background: rgb(255, 255, 255);
+    height: auto;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.19);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+div#title {
+    background: #fff;
+    text-align: left;
+}
+
+#title h1 {
+    color: rgb(24, 137, 236);
+    text-align: left;
+    font-size: 30px;
+    background: inherit;
+    display: inline-block;
+    z-index: 4;
+    padding-right: 11px;
+}
+
+#title span {
+    display: inline-block;
+    top: 54%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+#title span hr {
+    border: 1px solid rgb(24, 137, 236);
+    border-top: none;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    right: 10%;
+    width: 100px;
+    top: 85%;
+    background: rgb(66, 66, 66);
+    color: rgb(255, 255, 255);
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.33);
+    font-size: 12px;
+    transition: 0.7s;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow: hidden;
+}
+
+.tooltip a {
+    width: 100%;
+    display: inline-block;
+    color: #fff;
+    padding: 10px 18px;
+    transition: 0.6s;
+}
+
+.tooltip a:hover {
+    padding: 10px 25px;
+    background: #fff;
+    color: rgb(66, 66, 66);
+    border-right: 15px solid;
+}
+
+@media screen and (max-width: 480px) {
+    input {
+        margin: 15px 0px;
+        width: 100%;
+    }
+    .side_menu.show {
+        width: 80%;
+    }
+    .side_menu {
+        width: 80%;
+        left: -80%;
+    }
+    #ref.rez {
+        left: 80%;
+    }
+    .nav-bar .nav-bar-logo {
+        width: 48%;
+    }
+    .nav-bar .nav-bar-menu,
+    .nav-bar .nav-bar-notif {
+        padding: 2px 15px;
+        padding-left: 0;
+    }
+    .nav-bar .nav-bar-menu i,
+    .nav-bar .nav-bar-notif i {
+        font-size: 22px;
+    }
+    ul#side-links li a {
+        font-size: 12px;
+        padding: 17px 30px;
+        font-weight: 700;
+    }
+    ul#side-links li a i {
+        font-size: 18px;
+    }
+    .back {
+        height: 200px;
+    }
+    .bodyLeft_botm {
+        display: table;
+        width: 100%;
+        text-align: left;
+    }
+    .bodyLeft {
+        width: 100%;
+    }
+    .bodyLeft_botm h1 span {
+        width: 68%;
+    }
+    .bodyRight {
+        margin-top: 0;
+        width: 100%;
+        border: none;
+    }
+    .bodyRight h1 span {
+        width: 26%;
+        margin-left: 7px;
+    }
+}

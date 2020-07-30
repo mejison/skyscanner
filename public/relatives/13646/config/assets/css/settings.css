@@ -1,0 +1,30 @@
+@import url("admin.css");
+.meta#req_body td {
+    padding: 0px 0px;
+    background: rgba(241, 241, 241, 0.72);
+}
+
+.meta#req_body td button {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+}
+
+.meta#req_body td.edit,
+.meta#req_body td.delete {
+    padding: 0 10px;
+}
+
+.meta#req_body td.edit a,
+.meta#req_body td.delete a {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    padding: 16px 10px;
+}
+
+a#add_button {
+    margin: 15px 0px;
+    display: inline-block;
+    text-decoration: underline;
+}

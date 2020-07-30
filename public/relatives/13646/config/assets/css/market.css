@@ -1,0 +1,211 @@
+@import url("admin.css");
+.ref.mart .bodyLeft {
+    width: 80%;
+}
+
+.faqtabs {
+    border-radius: 8px;
+    width: 100%;
+}
+
+.faqtab {
+    width: 100%;
+}
+
+.faqtab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 35px;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    color: rgb(117, 117, 117);
+    border-radius: 40px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.16);
+    transition: 0.8s;
+    border: 1px solid rgba(115, 115, 115, 0.24);
+    font-weight: 900;
+}
+
+.faqtab-label:hover {
+    background: rgb(25, 184, 237);
+    color: #fff;
+}
+
+.faqtab-label::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all 0.35s;
+}
+
+.faqtab-content {
+    max-height: 0;
+    padding: 0px 35px;
+    background: white;
+    transition: all 0.8s;
+    overflow: hidden;
+}
+
+.faqtab-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: rgb(25, 184, 237);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.27);
+    transition: 0.8s;
+    border: 1px solid rgba(25, 184, 237, 0.35);
+}
+
+.faqtab-close:hover {
+    color: rgb(24, 137, 236);
+}
+
+input:checked+.faqtab-label {
+    background: rgb(25, 137, 236);
+    border-bottom-right-radius: 0;
+    color: rgb(241, 241, 241);
+}
+
+input:checked+.faqtab-label::after {
+    transform: rotate(90deg);
+}
+
+input:checked~.faqtab-content {
+    max-height: 180px;
+    padding: 30px 35px;
+    border: 1px solid rgba(107, 107, 107, 0.15);
+    border-bottom-right-radius: 30px;
+    display: table;
+    height: auto;
+    width: 100%;
+}
+
+.faqtabs .faqtab input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    left: 0;
+    width: 100%;
+}
+
+.faqtab_talk {
+    text-align: left;
+    width: 100%;
+}
+
+div#mart_data a {
+    font-weight: 900;
+    font-size: 13px;
+    text-decoration: underline;
+    color: rgb(24, 137, 236);
+    margin-bottom: 10px;
+    display: inline-block;
+    transition: 0.6s;
+}
+
+div#mart_data a:hover {
+    color: gray;
+}
+
+div#mart_data p#dat {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: rgb(24, 137, 236);
+    font-style: italic;
+    font-weight: 600;
+}
+
+div#mart_data p span {
+    font-size: 12px;
+    margin-left: 5px;
+    color: rgb(25, 184, 237);
+}
+
+div#mart_data h4 {
+    font-size: 14px;
+    color: rgb(25, 184, 237);
+    margin-bottom: 9px;
+    font-style: italic;
+    font-weight: 900;
+}
+
+div#mart_data h4 span {
+    margin-left: 10px;
+    font-weight: 300;
+    color: rgb(66, 66, 66);
+    font-style: normal;
+}
+
+.table-image {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+}
+
+.table-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.tabs {
+    width: 100%;
+    border-bottom: 1px solid rgba(25, 184, 237, 0.34);
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    background: rgb(25, 184, 237);
+    display: inline-block;
+    color: #fff;
+    border-radius: 3px 3px 0px 0px;
+    border: 1px solid rgb(25, 184, 237);
+    transition: 0.6s;
+    font-weight: 800;
+}
+
+.panels {
+    background: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 14px 5px;
+}
+
+.panel {
+    display: none;
+}
+
+.panel-title {
+    font-size: 1.5em;
+    font-weight: bold
+}
+
+.radio {
+    display: none;
+}
+
+#one:checked~.panels #one-panel,
+#two:checked~.panels #two-panel,
+#three:checked~.panels #three-panel {
+    display: block
+}
+
+#one:checked~.tabs #one-tab,
+#two:checked~.tabs #two-tab,
+#three:checked~.tabs #three-tab {
+    background: rgb(255, 255, 255);
+    border-top: 3px solid rgb(25, 184, 237);
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    padding-top: 7px;
+    color: rgb(25, 184, 237);
+    border-bottom: 0;
+    padding-bottom: 11px;
+}

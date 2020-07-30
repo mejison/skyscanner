@@ -1,0 +1,92 @@
+.warpper input.incorrect {
+  border: 1px solid #D7385E;
+}
+
+.warpper input.correct {
+  border: 1px solid #38CBB3;
+}
+
+.filter-additional-services li label {
+  color: #000;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.flights {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  padding: 15px;
+}
+
+.item-flight {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  margin-bottom: 15px;
+  align-items: center;  
+  color: #84939a;
+}
+
+.item-flight .logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.item-flight .view-btn {
+  border: 1px solid rgb(25, 184, 237);
+  padding: 3px 10px;
+  color: rgb(25, 184, 237);
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.item-flight .flight-time .start,
+.item-flight .flight-time .end {
+  position: relative;
+}
+
+.item-flight .flight-time .start .airport,
+.item-flight .flight-time .end .airport {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.item-flight .flight-time .start,
+.item-flight .flight-time .end {
+  max-width: 60px;
+  white-space: normal;
+  display: inline-block;
+  text-align: center;
+}
+
+.item-flight .flight-time .arrow {
+  border-bottom: 2px solid #eee;
+  margin: 0 15px;
+  min-width: 100px;
+  display: inline-block;  
+  text-align: center;
+  position: relative;
+}
+
+.item-flight .flight-time .arrow .duration {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5px;
+}
+
+.flight-price {
+  color: #52c5a1;
+  font-weight: bold;
+}

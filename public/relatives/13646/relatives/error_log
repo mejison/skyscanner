@@ -1,0 +1,1 @@
+[15-Jul-2020 07:21:54 America/Boise] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home1/firstmf1/public_html/639/public/relatives/13646/config/server.php on line 9
