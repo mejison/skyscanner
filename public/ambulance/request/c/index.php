@@ -44,33 +44,4 @@ require '../../../../config/server.php';
     </div>    
     <script src="/assets/js/main.js"></script>
 </body>
-<script>
-    // $(document).ready(function() {
-    //     //---------------------------------------------------------------------------------------------------------------
-    //     $("#search_t").on('click', function(e) {
-    //         e.preventDefault();
-    //         $('.divWrap').prepend('<span id="recha">Preparing your results, please wait...</span>');
-    //         let data = $('#return').serialize()
-    //         $.ajax({
-    //             success: function(response) {
-    //                 $('#recha').remove();
-    //                 $('#body').load('/request/c/s.php');
-    //             }
-    //         });
-    //     });
-    //     //---------------------------------------------------------------------------------------------------------------
-    //     $("#search_o").on('click', function(e) {
-    //         e.preventDefault();
-    //         $('.divWrap').prepend('<span id="recha">Preparing your results, please wait...</span>');
-    //         let data = $('#oneway').serialize()
-    //         $.ajax({
-    //             success: function(response) {
-    //                 $('#recha').remove();
-    //                 $('#body').load('/request/c/s.php');
-    //             }
-    //         });
-    //     });
-    // })
-</script>
-
 </html>

@@ -62,6 +62,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
     <script src="https://unpkg.com/vuex@3.5.1/dist/vuex.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 
     <script defer>
         var Tawk_API = Tawk_API || {},

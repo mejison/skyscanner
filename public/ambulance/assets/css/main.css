@@ -90,3 +90,223 @@
   color: #52c5a1;
   font-weight: bold;
 }
+
+.current-flight {
+  
+}
+
+.current-flight .details {
+  padding: 30px 0;
+  color: #84939a;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.current-flight .details h2 {
+  color: rgb(25, 184, 237);  
+  font-size: 23px;
+  margin-bottom: 25px;
+}
+
+.total-price {
+  color: #52c5a1;
+  font-weight: bold;
+  font-size: 20px;  
+}
+
+.booking-btn {
+  margin-top: 30px;
+  display: table;
+  padding: 10px 40px;
+  background: rgb(25, 184, 237);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.flight-info {
+  padding: 30px;
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.flight-info .location-line {
+  font-size: 16px;
+  display: flex;
+  color: #555;
+  font-weight: 600;
+}
+
+
+.flight-info .location-line .to {
+  margin: 0 15px;
+  font-weight: 400;
+}
+
+.flight-info .location-line .duration {
+  margin-left: auto;
+  font-weight: 400;
+}
+
+.flight-info .image {
+  width: 150px;
+  margin: 15px 30px 15px 0;
+}
+
+
+.flight-info .carrier {
+  font-size: 16px;
+  display: flex;
+  color: #555;
+  align-items: center;
+}
+
+
+.times-period {
+  display: flex;
+}
+
+.times-period .start,
+.times-period .end {
+  position: relative;
+}
+
+.times-period .start .airport,
+.times-period .end .airport {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.times-period .start,
+.times-period .end {
+  max-width: 60px;
+  white-space: normal;
+  display: inline-block;
+  text-align: center;
+}
+
+.times-period .arrow {
+  border-bottom: 2px solid #eee;
+  margin: 0 15px;
+  width: 100%;
+  display: inline-block;  
+  text-align: center;
+  position: relative;
+}
+
+
+.times-period .arrow .duration {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5px;
+}
+.times-period .start,
+.times-period .end {
+  position: relative;
+}
+
+.times-period .start .airport,
+.times-period .end .airport {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.times-period .start,
+.times-period .end {
+  max-width: 60px;
+  white-space: normal;
+  display: inline-block;
+  text-align: center;
+}
+
+.times-period .arrow {
+  border-bottom: 2px solid #eee;
+  margin: 0 15px;
+  min-width: 100px;
+  display: inline-block;  
+  text-align: center;
+  position: relative;
+}
+
+.times-period .arrow .duration {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5px;
+}
+
+#title h1{
+  margin: 0;
+  padding: 0;
+}
+
+.final {
+  display: flex;
+}
+
+.final-price {
+  margin: 30px 0;
+  color: #52c5a1;
+  font-weight: bold;
+  font-size: 18px; 
+}
+
+.final .btn-pay-now,
+.final .btn-generate-invoice {
+  padding: 15px 35px;
+}
+
+.filter {
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.filter select,
+.filter input {
+  padding: 5px 10px !important;
+  border: unset !important;
+  margin: unset !important;
+  min-width: 50px;
+  max-width: 100px;
+  width: auto !important;  
+}
+
+.filter .from {
+
+}
+
+.filter .to {
+  
+}
+
+.filter .departure {
+  
+}
+
+.filter .arrival {
+  
+}
+
+.filter .passangers {
+  
+}
+
+.filter .class  {
+}
+
+.search-btn {
+  font-size: 20px;
+  color: rgb(25, 184, 237);  
+}

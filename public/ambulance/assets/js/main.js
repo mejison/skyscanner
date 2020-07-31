@@ -49,6 +49,7 @@ const global = {
 
   actions: {
     getFlights: function ({ commit }, params) {
+      commit('setFlights', [])
       return axios.get(`/get-flights.php`, {
         params
       }).then(function (res) {
@@ -68,7 +69,7 @@ const store = new Vuex.Store(global)
 const mixins = {
   'search-flights': {
 
-    mounted() {
+    mounted: function () {
       for (let field of this.fields[store.state.type]) {
         if (this.$refs[`${store.state.type}.${field}`] && store.state[store.state.type][field]) [
           this.$refs[`${store.state.type}.${field}`].value = store.state[store.state.type][field]
@@ -116,7 +117,7 @@ const mixins = {
           this.$router.push({ path: '/results', query: { ...store.state[store.state.type], type: store.state.type } })
         }
       },
-      validate(field) {
+      validate: function (field) {
         field.classList.remove('incorrect')
         if (!field.value) {
           field.classList.add('incorrect')
@@ -138,9 +139,19 @@ const mixins = {
   'search-results': {
     data: function () {
       return {
-        filters: {
+        options: {
           additional_service: [],
           journey_type: '',
+        },
+        currentFlight: false,
+        price_for_additional_service: 10,
+        filter: {
+          from: '',
+          to: '',
+          passengers: '',
+          arrival: '',
+          departure: '',
+          class: 'Economy'
         }
       }
     },
@@ -154,6 +165,13 @@ const mixins = {
           value: query[param]
         })
       }
+
+      this.filter.passengers = store.state[store.state.type].passengers
+      this.filter.class = store.state[store.state.type].class
+      this.filter.from = store.state[store.state.type].from
+      this.filter.to = store.state[store.state.type].to
+      this.filter.departure = store.state[store.state.type].departure_date
+      this.filter.arrival = store.state[store.state.type].return_date
     },
 
     mounted: function () {
@@ -161,18 +179,36 @@ const mixins = {
     },
 
     computed: {
-      currency() {
+      finalPrice: function () {
+        return this.totalPrice + (this.options.additional_service.length * this.price_for_additional_service);
+      },
+      bookingLink: function () {
+        return this.currentFlight ? this.currentFlight.PricingOptions[0].DeeplinkUrl : '/'
+      },
+      totalPrice: function () {
+        return this.currentFlight ? this.currentFlight.PricingOptions[0].Price : 0
+      },
+      locationFrom: function () {
+        return store.state[store.state.type].from
+      },
+      locationTo: function () {
+        return store.state[store.state.type].to
+      },
+      passengers: function () {
+        return store.state[store.state.type].passengers
+      },
+      currency: function () {
         return this.flights.Currencies[0]
       },
-      fromAirPort() {
+      fromAirPort: function () {
         let [airport, country] = store.state[store.state.type].from.split(',')
         return airport
       },
-      toAirPort() {
+      toAirPort: function () {
         let [airport, country] = store.state[store.state.type].to.split(',')
         return airport
       },
-      classFly() {
+      classFly: function () {
         return store.state[store.state.type].class
       },
       flights: function () {
@@ -181,7 +217,7 @@ const mixins = {
     },
 
     methods: {
-      parseMinutes(x) {
+      parseMinutes: function (x) {
         hours = Math.floor(x / 60);
         minutes = x % 60;
 
@@ -190,41 +226,150 @@ const mixins = {
         }
         return `${x}m`
       },
-      getTimeFromFormat(date) {
+      onSearchResults() {
+        store.commit('setState', {
+          name: 'passengers',
+          value: this.filter.passengers
+        })
+
+        store.commit('setState', {
+          name: 'class',
+          value: this.filter.class
+        })
+
+        store.commit('setState', {
+          name: 'return_date',
+          value: this.filter.arrival
+        })
+
+
+        store.commit('setState', {
+          name: 'departure_date',
+          value: this.filter.departure
+        })
+
+        store.commit('setState', {
+          name: 'from',
+          value: this.filter.from
+        })
+
+        store.commit('setState', {
+          name: 'to',
+          value: this.filter.to
+        })
+
+        store.commit('setState', {
+          name: 'to',
+          value: this.filter.to
+        })
+
+        this.$router.push({ path: '/results', query: { ...store.state[store.state.type], type: store.state.type } })
+        this.getFlights();
+      },
+      getTimeFromFormat: function (date) {
         let [dataTmp, time] = date.split('T')
         return `${dataTmp} ${time}`
       },
-      getStops(stops) {
+      getStops: function (stops) {
         return stops.map((place_id) => {
           return this.getPlaceById(place_id)
         }).map(function (item) {
           return `${item.Type}/${item.Name}`
         })
       },
-      getPlaceById(Id) {
+      getPlaceById: function (Id) {
         return this.flights.Places.find(function (item) {
           return item.Id == Id
         })
       },
-      onView(flight) {
-        console.log(flight)
+      onView: function (flight) {
+        this.currentFlight = flight
       },
-      getLedById(LegId) {
+      getLedById: function (LegId) {
         return this.flights.Legs.find(function (item) {
           return item.Id == LegId
         })
       },
-      getCarrierById(id) {
+      getCarrierById: function (id) {
         return this.flights.Carriers.find(function (item) {
           return item.Id == id
         })
       },
-      onChangeFilter() {
-        this.getFlights();
+      onChangeFilter: function () {
+
       },
       getFlights: function () {
         $('.divWrap').prepend('<span id="recha">Preparing your results, please wait...</span>');
         store.dispatch('getFlights', { ...store.state[store.state.type], type: store.state.type, ...this.filters })
+      },
+      onClickPayNow: function () {
+        this.payWithPaystack();
+      },
+      payWithPaystack: function () {
+        let handler = PaystackPop.setup({
+          key: 'pk_test_c41b28101f0051385175eea54be0a1b34b5d15e5',
+          email: 'customer@email.com',
+          amount: this.finalPrice * 100,
+          metadata: {
+            custom_fields: {
+              from: this.locationFrom,
+              to: this.locationTo,
+              class: this.classFly,
+              flightCarrier: this.currentFlight
+            }
+          },
+          callback: function (response) {
+            const data = {
+              from: store.state[store.state.type].from,
+              to: store.state[store.state.type].to,
+              passengers: store.state[store.state.type].passengers,
+              departure_date: store.state[store.state.type].departure_date,
+            }
+
+            if (store.state[store.state.type].return_date) {
+              data.return_date = store.state[store.state.type].return_date
+            }
+
+            axios.post("/payment.php", { reference: response.reference, ...data, ...this.options }).then(({ data }) => {
+
+              if ([200].indexOf(data.code) + 1) {
+                toastr.success(data.message);
+
+              }
+            })
+          },
+          onClose: function () {
+            toastr.error('Transaction cancelled')
+          }
+        });
+        handler.openIframe();
+      },
+      onClickGenerateInvoice: function () {
+        const data = {
+          from: store.state[store.state.type].from,
+          to: store.state[store.state.type].to,
+          passengers: store.state[store.state.type].passengers,
+          departure_date: store.state[store.state.type].departure_date,
+        }
+
+        if (store.state[store.state.type].return_date) {
+          data.return_date = store.state[store.state.type].return_date
+        }
+
+        axios.post("/invoice-generate.php", {
+          ...data, ...this.options, flight: {
+            departure: this.getLedById(this.currentFlight.InboundLegId).Departure,
+            duration: this.parseMinutes(this.getLedById(this.currentFlight.InboundLegId).Duration),
+            arrival: this.getLedById(this.currentFlight.InboundLegId).Arrival,
+            carrier: this.getCarrierById(this.getLedById(this.currentFlight.InboundLegId).Carriers[0]),
+            price: this.totalPrice
+          }, final_price: this.finalPrice
+        }).then(({ data }) => {
+          let a = document.createElement('a')
+          a.href = data.data.pdf_link
+          a.target = 'black'
+          a.click()
+        })
       }
     }
   }
