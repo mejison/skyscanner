@@ -18,12 +18,12 @@ const global = {
   state: {
     type: 'return',
     return: {
-      from: 'EDI, United Kingdom',
-      to: 'LHR, United Kingdom',
-      departure_date: '07/31/2020',
-      return_date: '08/13/2020',
-      class: 'Economy',
-      passengers: 1,
+      from: '',
+      to: '',
+      departure_date: '',
+      return_date: '',
+      class: '',
+      passengers: 0,
     },
     oneway: {
       from: '',
