@@ -13,7 +13,7 @@
   <div class="departure">
     <input placeholder="Departure" type="date"  min="<?php $rtoday = date("Y-m-d"); echo $rtoday;?>" v-model="filter.departure" />
   </div>
-  <div class="arrival">
+  <div class="arrival" v-if="bookingType !='oneway'">
     <input placeholder="Arrival" type="date" min="<?php $today = date("Y-m-d"); echo $today;?>" v-model="filter.arrival" />
   </div>
   <div class="passangers">

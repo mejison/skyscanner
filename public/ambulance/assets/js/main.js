@@ -194,6 +194,9 @@ const mixins = {
       locationTo: function () {
         return store.state[store.state.type].to
       },
+      bookingType: function () {
+        return store.state.type
+      },
       passengers: function () {
         return store.state[store.state.type].passengers
       },

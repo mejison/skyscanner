@@ -22,26 +22,26 @@
             <div class="item-flight" v-for="(flight, index) in flights.Itineraries" :key="index">
                 <div class="airline-name">
                     <div class="logo">
-                        <img :src="getCarrierById(getLedById(flight.InboundLegId).Carriers[0]).ImageUrl" alt="logo" />
+                        <img :src="getCarrierById(getLedById(flight.OutboundLegId).Carriers[0]).ImageUrl" alt="logo" />
                     </div>                 
                 </div>
                 <div class="flight-time">
                     <span class="start">                        
-                        {{ getTimeFromFormat(getLedById(flight.InboundLegId).Departure) }}
+                        {{ getTimeFromFormat(getLedById(flight.OutboundLegId).Departure) }}
                         <span class="airport">{{ fromAirPort }} </span>
                     </span>
                     <span class="arrow">
                         <span class="duration">
-                            {{ parseMinutes(getLedById(flight.InboundLegId).Duration) }}
+                            {{ parseMinutes(getLedById(flight.OutboundLegId).Duration) }}
                         </span>
                     </span>
                     <span class="end">
-                        {{ getTimeFromFormat(getLedById(flight.InboundLegId).Arrival) }}
+                        {{ getTimeFromFormat(getLedById(flight.OutboundLegId).Arrival) }}
                         <span class="airport">{{ toAirPort }} </span>
                     </span>                                
                 </div>
                 <div class="flight-layover">
-                    {{ getLedById(flight.InboundLegId).Stops.length ? getStops(getLedById(flight.InboundLegId).Stops).join(', ') : 'Nonstops' }}
+                    {{ getLedById(flight.OutboundLegId).Stops.length ? getStops(getLedById(flight.OutboundLegId).Stops).join(', ') : 'Nonstops' }}
                 </div>
                 <div class="flight-class">
                     {{ classFly }}
@@ -95,29 +95,29 @@
                         {{ locationTo }}
                     </span>
                     <span class="duration">
-                        {{ parseMinutes(getLedById(currentFlight.InboundLegId).Duration) }}
+                        {{ parseMinutes(getLedById(currentFlight.OutboundLegId).Duration) }}
                     </span>
                 </div>
                 <div class="carrier">
                     <div class="image">
-                        <img :src="getCarrierById(getLedById(currentFlight.InboundLegId).Carriers[0]).ImageUrl" />
+                        <img :src="getCarrierById(getLedById(currentFlight.OutboundLegId).Carriers[0]).ImageUrl" />
                     </div>
                     <div class="name">
-                        {{ getCarrierById(getLedById(currentFlight.InboundLegId).Carriers[0]).Name }}, {{ classFly }}
+                        {{ getCarrierById(getLedById(currentFlight.OutboundLegId).Carriers[0]).Name }}, {{ classFly }}
                     </div>
                 </div>
                 <div class="times-period">
                     <span class="start">                        
-                        {{ getTimeFromFormat(getLedById(currentFlight.InboundLegId).Departure) }}
+                        {{ getTimeFromFormat(getLedById(currentFlight.OutboundLegId).Departure) }}
                         <span class="airport">{{ fromAirPort }} </span>
                     </span>
                     <span class="arrow">
                         <span class="duration">
-                            {{ parseMinutes(getLedById(currentFlight.InboundLegId).Duration) }}
+                            {{ parseMinutes(getLedById(currentFlight.OutboundLegId).Duration) }}
                         </span>
                     </span>
                     <span class="end">
-                        {{ getTimeFromFormat(getLedById(currentFlight.InboundLegId).Arrival) }}
+                        {{ getTimeFromFormat(getLedById(currentFlight.OutboundLegId).Arrival) }}
                         <span class="airport">{{ toAirPort }} </span>
                     </span>    
                 </div>
