@@ -152,7 +152,49 @@ const mixins = {
           arrival: '',
           departure: '',
           class: 'Economy'
-        }
+        },
+        add_services: [
+          {
+            name: 'Wheelchair',
+            price: 25000,
+          },
+          {
+            name: 'Ground Ambulance',
+            price: 1000,
+          },
+          {
+            name: 'Ventilator',
+            price: 25000,
+          },
+          {
+            name: 'Incubator',
+            price: 50000,
+          },
+          {
+            name: 'Oxygen',
+            price: 1000,
+          },
+          {
+            name: 'External Pacemaker',
+            price: 50000,
+          },
+          {
+            name: 'Drainages',
+            price: 1000,
+          },
+          {
+            name: 'Catheter',
+            price: 25000,
+          },
+          {
+            name: 'Intubator',
+            price: 1000,
+          },
+          {
+            name: 'Traction Device',
+            price: 25000,
+          }
+        ]
       }
     },
 
@@ -179,8 +221,13 @@ const mixins = {
     },
 
     computed: {
+      additionalServiceTotal() {
+        return this.options.additional_service.reduce(function (a, next) {
+          return a + next.price
+        }, 0)
+      },
       finalPrice: function () {
-        return this.totalPrice + (this.options.additional_service.length * this.price_for_additional_service);
+        return this.totalPrice + this.additionalServiceTotal;
       },
       bookingLink: function () {
         return this.currentFlight ? this.currentFlight.PricingOptions[0].DeeplinkUrl : '/'

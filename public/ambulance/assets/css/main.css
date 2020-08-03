@@ -10,6 +10,12 @@
   color: #000;
   font-size: 12px;
   font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-additional-services .price {
+  margin-left: auto;
 }
 
 .flights {

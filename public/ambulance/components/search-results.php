@@ -4,16 +4,13 @@
             <h1>Additional Services</h1>
         </div>
         <ul class="filter-additional-services">
-            <li><label><input name="services" value="Wheelchair" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter">Wheelchair</label></li>
-            <li><label><input name="services" value="Ground Ambulance" type="checkbox" v-model="options.additional_service"  v-on:change="onChangeFilter">Ground Ambulance</label></li>
-            <li><label><input name="services" value="Ventilator" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter">Ventilator</label></li>
-            <li><label><input name="services" value="Incubator" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter">Incubator</label></li>
-            <li><label><input name="services" value="Oxygen" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter">Oxygen</label></li>
-            <li><label><input name="services" value="External Pacemaker" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter">External Pacemaker</label></li>
-            <li><label><input name="services" value="Drainages" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter">Drainages</label></li>
-            <li><label><input name="services" value="Cathether" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter">Catheter</label></li>
-            <li><label><input name="services" value="Intubator" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter">Intubator</label></li>
-            <li><label><input name="services" value="Traction Device" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter">Traction Device</label></li>
+            <li v-for="(ser, index) in add_services" :key="index">
+                <label>
+                    <input name="services" :value="ser" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter"  />
+                    {{ ser.name }}
+                    <span class="price">NGN{{ ser.price }}</span>
+                </label>
+            </li>
         </ul>
     </section>
     <section class="s_center">
