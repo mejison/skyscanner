@@ -132,7 +132,7 @@
             </div>
             <div class="final">
                 <button class="btn-pay-now" v-on:click.prevent="onClickPayNow">Pay Now</button>
-                <button class="btn-generate-invoice" v-on:click.prevent="onClickGenerateInvoice">Generate Invoice</button>
+                <!-- <button class="btn-generate-invoice" v-on:click.prevent="onClickGenerateInvoice">Generate Invoice</button> -->
             </div>
         </div>
     </section>
