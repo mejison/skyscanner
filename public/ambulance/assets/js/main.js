@@ -232,7 +232,7 @@ const mixins = {
         return this.currentFlight ? this.currentFlight.PricingOptions[0].DeeplinkUrl : '/'
       },
       totalPrice: function () {
-        return this.currentFlight ? this.currentFlight.PricingOptions[0].Price : 0
+        return this.currentFlight ? this.currentFlight.PricingOptions[0].Price * this.passengers : 0
       },
       locationFrom: function () {
         return store.state[store.state.type].from
