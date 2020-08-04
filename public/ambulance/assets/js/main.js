@@ -266,6 +266,20 @@ const mixins = {
     },
 
     methods: {
+      getCodeByLocation: function (location) {
+        let options = $('#airport option')
+        let option = [...options].find(function (item) {
+          return item.dataset.location == location
+        })
+        return option ? option.dataset.code : ""
+      },
+      getCountryByLocation: function (location) {
+        let options = $('#airport option')
+        let option = [...options].find(function (item) {
+          return item.dataset.location == location
+        })
+        return option ? option.dataset.country : ""
+      },
       parseMinutes: function (x) {
         hours = Math.floor(x / 60);
         minutes = x % 60;
@@ -349,7 +363,15 @@ const mixins = {
       },
       getFlights: function () {
         $('.divWrap').prepend('<span id="recha">Preparing your results, please wait...</span>');
-        store.dispatch('getFlights', { ...store.state[store.state.type], type: store.state.type, ...this.filters })
+        let fromCode = this.getCodeByLocation(store.state[store.state.type].from);
+        let toCode = this.getCodeByLocation(store.state[store.state.type].to);
+        let fromCountry = this.getCountryByLocation(store.state[store.state.type].from);
+        let toCountry = this.getCountryByLocation(store.state[store.state.type].to);
+
+        let from = `${fromCode}, ${fromCountry}`;
+        let to = `${toCode}, ${toCountry}`;
+
+        store.dispatch('getFlights', { ...store.state[store.state.type], type: store.state.type, ...this.filters, from, to })
       },
       onClickPayNow: function () {
         this.payWithPaystack();

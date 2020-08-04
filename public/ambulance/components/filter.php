@@ -39,8 +39,8 @@
         $sql->execute();
         $result = $sql->get_result();
         if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo '<option value="' . mb_convert_encoding($row['code'], "UTF-8", "iso-8859-1") . ', ' . mb_convert_encoding($row['country'], "UTF-8", "iso-8859-1") . '">' . mb_convert_encoding($row['code'], "UTF-8", "iso-8859-1") . ', ' . mb_convert_encoding($row['airport'], "UTF-8", "iso-8859-1") . '</option>';
+            while ($row = $result->fetch_assoc()) {    
+                echo '<option data-country="' . mb_convert_encoding($row['country'], "UTF-8", "iso-8859-1") . '" data-location="' . mb_convert_encoding($row['location'], "UTF-8", "iso-8859-1") . ', ' . mb_convert_encoding($row['country'], "UTF-8", "iso-8859-1") . '"  data-code="' . mb_convert_encoding($row['code'], "UTF-8", "iso-8859-1") . '" value="' . mb_convert_encoding($row['location'], "UTF-8", "iso-8859-1") . ', ' . mb_convert_encoding($row['country'], "UTF-8", "iso-8859-1") . '">' . mb_convert_encoding($row['code'], "UTF-8", "iso-8859-1") . ', ' . mb_convert_encoding($row['airport'], "UTF-8", "iso-8859-1") . '</option>';
             }
         } else {
             echo '<option value="none">No airports results found!</option>';

@@ -27,8 +27,8 @@
       $response = $this->client->request('GET', "/apiservices/reference/v1.0/countries/en-GB?apiKey={$apikey}");      
       $response = json_decode($response->getBody(), true);
 
-      $finedCountry = array_filter($response['Countries'], function($item) use ($name) {
-        return $item['Name'] == $name;
+      $finedCountry = array_filter($response['Countries'], function($item) use ($name) {        
+        return trim($item['Name']) == $name;
       });
       
       return ! empty($finedCountry) ? end($finedCountry)['Code'] : "";
@@ -38,7 +38,6 @@
       list($code, $country) = explode(",", $name);
       return trim($country);
     }
-
     
     public function getCodeISOByName($name) {
       list($code) = explode(",", $name);
@@ -51,7 +50,7 @@
       $originplace = $this->getCodeISOByName($params["from"]);
       $destinationplace = $this->getCodeISOByName($params["to"]);
       $country = $this->getISOCodeCountryByName($this->getCountryByName($params["from"]));
-      
+
       $response = $this->client->request('POST', '/apiservices/pricing/v1.0', [
         'form_params' => [
           'cabinclass' => $params['class'],
