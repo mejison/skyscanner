@@ -124,6 +124,12 @@
             <div id="title">
                 <h1>Final Amount</h1>
             </div>
+            <div class="selected-add-services">
+                <div class="selected-add" v-for="(add, index) in options.additional_service" :key="index">
+                    {{ add.name }}
+                    <span class="price">NGN{{ add.price }}</span>
+                </div>
+            </div>
             <div class="final-price">
                 <span>NGN {{ finalPrice }}</span><br>
             </div>

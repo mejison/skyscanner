@@ -144,7 +144,6 @@ const mixins = {
           journey_type: '',
         },
         currentFlight: false,
-        price_for_additional_service: 10,
         filter: {
           from: '',
           to: '',

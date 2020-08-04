@@ -289,30 +289,19 @@
   width: auto !important;  
 }
 
-.filter .from {
-
-}
-
-.filter .to {
-  
-}
-
-.filter .departure {
-  
-}
-
-.filter .arrival {
-  
-}
-
-.filter .passangers {
-  
-}
-
-.filter .class  {
-}
-
 .search-btn {
   font-size: 20px;
   color: rgb(25, 184, 237);  
+}
+
+.selected-add-services {
+  margin: 15px 0;
+}
+
+.selected-add-services .selected-add {
+  display: flex;  
+}
+
+.selected-add .price {
+  margin-left: auto;
 }
