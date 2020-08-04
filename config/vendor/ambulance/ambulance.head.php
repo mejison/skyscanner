@@ -57,7 +57,7 @@
     <script defer src="https://639.firstmedtrade.com/config/assets/js/ind.js"></script>
     <script src="https://639.firstmedtrade.com/config/assets/js/bootstrap.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
     <script src="https://unpkg.com/vue-router@3.3.4/dist/vue-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
     <script src="https://unpkg.com/vuex@3.5.1/dist/vuex.js"></script>
