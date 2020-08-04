@@ -331,7 +331,8 @@ const mixins = {
       },
       getTimeFromFormat: function (date) {
         let [dataTmp, time] = date.split('T')
-        return `${dataTmp} ${time}`
+        return `<div>${dataTmp}</div>
+                <div>${time}</div>`
       },
       getStops: function (stops) {
         return stops.map((place_id) => {

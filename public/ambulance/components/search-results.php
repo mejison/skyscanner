@@ -23,8 +23,9 @@
                     </div>                 
                 </div>
                 <div class="flight-time">
-                    <span class="start">                        
-                        {{ getTimeFromFormat(getLedById(flight.OutboundLegId).Departure) }}
+                    <span class="start">       
+                        <div v-html="getTimeFromFormat(getLedById(flight.OutboundLegId).Departure)">
+                        </div>                                         
                         <span class="airport">{{ fromAirPort }} </span>
                     </span>
                     <span class="arrow">
@@ -33,7 +34,8 @@
                         </span>
                     </span>
                     <span class="end">
-                        {{ getTimeFromFormat(getLedById(flight.OutboundLegId).Arrival) }}
+                        <div v-html="getTimeFromFormat(getLedById(flight.OutboundLegId).Arrival)">
+                        </div>                        
                         <span class="airport">{{ toAirPort }} </span>
                     </span>                                
                 </div>
@@ -105,7 +107,7 @@
                 </div>
                 <div class="times-period">
                     <span class="start">                        
-                        {{ getTimeFromFormat(getLedById(currentFlight.OutboundLegId).Departure) }}
+                        <div v-html="getTimeFromFormat(getLedById(currentFlight.OutboundLegId).Departure)"></div>                        
                         <span class="airport">{{ fromAirPort }} </span>
                     </span>
                     <span class="arrow">
@@ -113,8 +115,8 @@
                             {{ parseMinutes(getLedById(currentFlight.OutboundLegId).Duration) }}
                         </span>
                     </span>
-                    <span class="end">
-                        {{ getTimeFromFormat(getLedById(currentFlight.OutboundLegId).Arrival) }}
+                    <span class="end" >
+                        <div v-html="getTimeFromFormat(getLedById(currentFlight.OutboundLegId).Arrival)"></div>
                         <span class="airport">{{ toAirPort }} </span>
                     </span>    
                 </div>

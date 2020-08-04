@@ -61,11 +61,7 @@
 }
 
 .item-flight .flight-time .start .airport,
-.item-flight .flight-time .end .airport {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+.item-flight .flight-time .end .airport {    
 }
 
 .item-flight .flight-time .start,
@@ -98,7 +94,9 @@
 }
 
 .current-flight {
-  
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .current-flight .details {
@@ -178,14 +176,6 @@
   position: relative;
 }
 
-.times-period .start .airport,
-.times-period .end .airport {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .times-period .start,
 .times-period .end {
   max-width: 60px;
@@ -213,14 +203,6 @@
 .times-period .start,
 .times-period .end {
   position: relative;
-}
-
-.times-period .start .airport,
-.times-period .end .airport {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .times-period .start,
@@ -304,4 +286,17 @@
 
 .selected-add .price {
   margin-left: auto;
+}
+
+#s section.s_left {  
+  width: 20%;
+}
+
+#s section.s_center {
+  width: 55%;
+  display: block;
+}
+
+#s section.s_right {  
+  width: 25%;
 }
