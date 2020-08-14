@@ -309,3 +309,16 @@
   justify-content: center;
   align-items: center;
 }
+
+.sort-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sort-wrapper .sort {
+  display: flex;
+}
+
+.sort-wrapper .sort select {
+  margin-left: auto !important;
+}

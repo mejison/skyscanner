@@ -147,6 +147,25 @@ const mixins = {
   'search-results': {
     data: function () {
       return {
+        sort: '',
+        sortTypes: [
+          {
+            name: 'Cheapest price',
+            value: 'cheapest-price'
+          },
+          {
+            name: 'Most expensive price',
+            value: 'most-expensive-price',
+          },
+          {
+            name: 'Earliest flight time',
+            value: 'earliest-flight-time'
+          },
+          {
+            name: 'Late flight time',
+            value: 'late-flight-time',
+          }
+        ],
         numeral: numeral,
         options: {
           additional_service: [],
@@ -233,6 +252,42 @@ const mixins = {
         return this.options.additional_service.reduce(function (a, next) {
           return a + next.price
         }, 0)
+      },
+      flightsItinerariesSorted() {
+        return this.flights.Itineraries.sort((a, b) => {
+          if (this.sort) {
+            if (this.sort == 'cheapest-price') {
+              if (a.PricingOptions && b.PricingOptions) {
+                return a.PricingOptions[0].Price > b.PricingOptions[0].Price ? 1 : -1
+              }
+            }
+
+            if (this.sort == 'most-expensive-price') {
+              if (a.PricingOptions && b.PricingOptions) {
+                return a.PricingOptions[0].Price > b.PricingOptions[0].Price ? -1 : 1
+              }
+            }
+
+            if (this.sort == 'earliest-flight-time') {
+              if (this.getLedById(a.OutboundLegId).Departure > this.getLedById(b.OutboundLegId).Departure) {
+                return 1
+              } else {
+                return -1
+              }
+            }
+
+            if (this.sort == 'late-flight-time') {
+              if (this.getLedById(a.OutboundLegId).Departure > this.getLedById(b.OutboundLegId).Departure) {
+                return -1
+              } else {
+                return 1
+              }
+            }
+          }
+        })
+      },
+      departureDate() {
+        return store.state[store.state.type].departure_date
       },
       finalPrice: function () {
         return this.ticketPrice + this.additionalServiceTotal;

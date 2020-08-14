@@ -15,8 +15,9 @@
     </section>
     <section class="s_center">
         <?php include('filter.php'); ?>
+        <?php include('sort.php'); ?>
         <div class="flights" v-if="flights.Itineraries && flights.Itineraries.length">
-            <div class="item-flight" v-for="(flight, index) in flights.Itineraries" :key="index">
+            <div class="item-flight" v-for="(flight, index) in flightsItinerariesSorted" :key="index">
                 <div class="airline-name">
                     <div class="logo">
                         <img :src="getCarrierById(getLedById(flight.OutboundLegId).Carriers[0]).ImageUrl" alt="logo" />
