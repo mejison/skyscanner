@@ -60,8 +60,8 @@
             <div id="title" class="current-flight">
                 <h1>Flight Details</h1>
                 <div  class="details">
-                    <h2>Total price</h2>
-                    <div class="total-price">{{ currency.Code }} {{ totalPrice }}</div>
+                    <h2>Ticket price</h2>
+                    <div class="total-price">{{ currency.Code }} {{ ticketPrice }}</div>
                     <div>
                         for {{ passengers }} Traveller
                     </div>

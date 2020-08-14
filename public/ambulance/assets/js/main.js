@@ -226,12 +226,12 @@ const mixins = {
         }, 0)
       },
       finalPrice: function () {
-        return this.totalPrice + this.additionalServiceTotal;
+        return this.ticketPrice + this.additionalServiceTotal;
       },
       bookingLink: function () {
         return this.currentFlight ? this.currentFlight.PricingOptions[0].DeeplinkUrl : '/'
       },
-      totalPrice: function () {
+      ticketPrice: function () {
         return this.currentFlight ? this.currentFlight.PricingOptions[0].Price * this.passengers : 0
       },
       locationFrom: function () {
@@ -434,7 +434,7 @@ const mixins = {
             duration: this.parseMinutes(this.getLedById(this.currentFlight.InboundLegId).Duration),
             arrival: this.getLedById(this.currentFlight.InboundLegId).Arrival,
             carrier: this.getCarrierById(this.getLedById(this.currentFlight.InboundLegId).Carriers[0]),
-            price: this.totalPrice
+            price: this.ticketPrice
           }, final_price: this.finalPrice
         }).then(({ data }) => {
           let a = document.createElement('a')
