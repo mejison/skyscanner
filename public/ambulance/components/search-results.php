@@ -8,7 +8,7 @@
                 <label>
                     <input name="services" :value="ser" type="checkbox" v-model="options.additional_service" v-on:change="onChangeFilter"  />
                     {{ ser.name }}
-                    <span class="price">NGN{{ ser.price }}</span>
+                    <span class="price">NGN{{ numeral(ser.price).format('0[,]00') }}</span>
                 </label>
             </li>
         </ul>
@@ -46,7 +46,7 @@
                     {{ classFly }}
                 </div>
                 <div class="flight-price">
-                    {{ currency.Code }} {{ flight.PricingOptions[0].Price }}
+                    {{ currency.Code }}{{ numeral(flight.PricingOptions[0].Price).format('0[,]00') }}
                 </div>
                 <div class="flight-view">
                     <a href="#" class="view-btn" v-on:click.prevent="onView(flight)">View</a>
@@ -61,7 +61,7 @@
                 <h1>Flight Details</h1>
                 <div  class="details">
                     <h2>Ticket price</h2>
-                    <div class="total-price">{{ currency.Code }} {{ ticketPrice }}</div>
+                    <div class="total-price">{{ currency.Code }}{{ numeral(ticketPrice).format('0[,]00') }}</div>
                     <div>
                         for {{ passengers }} Traveller
                     </div>
@@ -129,11 +129,11 @@
             <div class="selected-add-services">
                 <div class="selected-add" v-for="(add, index) in options.additional_service" :key="index">
                     {{ add.name }}
-                    <span class="price">NGN{{ add.price }}</span>
+                    <span class="price">{{ currency.Code }}{{ numeral(add.price).format('0[,]00') }}</span>
                 </div>
             </div>
             <div class="final-price">
-                <span>NGN {{ finalPrice }}</span><br>
+                <span>{{ currency.Code }}{{ numeral(finalPrice).format('0[,]00') }}</span><br>
             </div>
             <div class="final">
                 <button class="btn-pay-now" v-on:click.prevent="onClickPayNow">Pay Now</button>

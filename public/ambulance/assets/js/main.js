@@ -14,6 +14,8 @@ const getComponent = function (name) {
 let loaded = 0;
 let components = ['search-flights', 'search-results'];
 
+let numeral = window.numeral;
+
 const global = {
   state: {
     type: 'return',
@@ -139,6 +141,7 @@ const mixins = {
   'search-results': {
     data: function () {
       return {
+        numeral: numeral,
         options: {
           additional_service: [],
           journey_type: '',
