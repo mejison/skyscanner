@@ -91,6 +91,8 @@
 .flight-price {
   color: #52c5a1;
   font-weight: bold;
+  font-size: 16px;
+  margin: 0 5px 0 10px;
 }
 
 .current-flight {
