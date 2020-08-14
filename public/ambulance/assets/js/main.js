@@ -136,6 +136,12 @@ const mixins = {
           value: event.target.value
         })
       }
+    },
+
+    computed: {
+      departureDate() {
+        return store.state[store.state.type].departure_date
+      }
     }
   },
   'search-results': {

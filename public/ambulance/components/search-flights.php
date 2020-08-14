@@ -25,7 +25,7 @@
                                 <input name="deprtdte" ref="return.departure_date" type="date" placeholder="Departure Date" min="<?php $rtoday = date("Y-m-d"); echo $rtoday;?>" required v-on:change="onChange('departure_date', $event)" />
                         </label>
                             <label>
-                                <input name="destndte" ref="return.return_date" type="date" placeholder="Return Date" min="<?php $today = date("Y-m-d"); echo $today;?>" required v-on:change="onChange('return_date', $event)" />
+                                <input name="destndte" ref="return.return_date" :min="departureDate" type="date" placeholder="Return Date" required v-on:change="onChange('return_date', $event)" />
                         </label>
                             <label>
                                 <input name="flcls" ref="return.class" type="text" placeholder="Flight Class" list="class" required v-on:change="onChange('class', $event)" />
