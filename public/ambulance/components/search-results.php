@@ -65,8 +65,23 @@
                     <div>
                         for {{ passengers }} Traveller
                     </div>
-                    <a :href="bookingLink" target="blunk" class="booking-btn">Book this flight</a>
+                    <!-- <a :href="bookingLink" target="blunk" class="booking-btn">Book this flight</a> -->
                 </div>
+            </div>            
+        </div>
+        <div id="bod" class="final-amount" v-if="finalPrice && currentFlight">            
+            <div class="selected-add-services">
+                <div class="selected-add" v-for="(add, index) in options.additional_service" :key="index">
+                    {{ add.name }}
+                    <span class="price">{{ currency.Code }}{{ numeral(add.price).format('0[,]00') }}</span>
+                </div>
+            </div>
+            <div class="final-price">
+                <span>{{ currency.Code }}{{ numeral(finalPrice).format('0[,]00') }}</span><br>
+            </div>
+            <div class="final">
+                <button class="btn-pay-now" v-on:click.prevent="onClickPayNow">Pay Now</button>
+                <!-- <button class="btn-generate-invoice" v-on:click.prevent="onClickGenerateInvoice">Generate Invoice</button> -->
             </div>
         </div>
         <div id="bod">
@@ -122,23 +137,6 @@
                 </div>
             </div>
         </div>
-        <div id="bod" v-if="finalPrice && currentFlight">
-            <div id="title">
-                <h1>Final Amount</h1>
-            </div>
-            <div class="selected-add-services">
-                <div class="selected-add" v-for="(add, index) in options.additional_service" :key="index">
-                    {{ add.name }}
-                    <span class="price">{{ currency.Code }}{{ numeral(add.price).format('0[,]00') }}</span>
-                </div>
-            </div>
-            <div class="final-price">
-                <span>{{ currency.Code }}{{ numeral(finalPrice).format('0[,]00') }}</span><br>
-            </div>
-            <div class="final">
-                <button class="btn-pay-now" v-on:click.prevent="onClickPayNow">Pay Now</button>
-                <!-- <button class="btn-generate-invoice" v-on:click.prevent="onClickGenerateInvoice">Generate Invoice</button> -->
-            </div>
-        </div>
+
     </section>
 </section>

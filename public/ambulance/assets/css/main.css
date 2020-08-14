@@ -302,3 +302,10 @@
 #s section.s_right {  
   width: 25%;
 }
+
+.final-amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
