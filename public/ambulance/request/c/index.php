@@ -38,7 +38,8 @@ require '../../../../config/server.php';
     <div class="divWrap request fade" id="app">
         <?php require '../../../../config/vendor/ambulance/ambulance.nav.php';?>
         <div class="container" id="body">
-            <router-view></router-view>                       
+            <span id="recha">Loading, please wait...</span>
+            <router-view></router-view>
         </div>
         <?php require '../../../../config/footer.php';?>
     </div>    

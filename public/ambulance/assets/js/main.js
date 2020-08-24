@@ -524,6 +524,8 @@ for (let element of components) {
 
 
 function init() {
+  $('#recha').remove();
+
   const routes = [
     { path: '/', component: window['search-flights'] },
     { path: '/results', component: window['search-results'] }
