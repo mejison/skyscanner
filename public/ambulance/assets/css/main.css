@@ -322,3 +322,21 @@
 .sort-wrapper .sort select {
   margin-left: auto !important;
 }
+
+select {
+  border: 1px solid rgb(206 206 206);  
+  color: rgb(88, 88, 88);
+  background-color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 14px;
+  padding: 21px 24px;
+  border-radius: 48px;
+}
+
+.warpper select {
+  padding: 18px 28px 18px 20px;
+  width: 25%;
+  margin: 0 10px 15px 0;
+}

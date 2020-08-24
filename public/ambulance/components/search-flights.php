@@ -27,8 +27,10 @@
                             <label>
                                 <input name="destndte" ref="return.return_date" :min="departureDate" type="date" placeholder="Return Date" required v-on:change="onChange('return_date', $event)" />
                         </label>
-                            <label>
-                                <input name="flcls" ref="return.class" type="text" placeholder="Flight Class" list="class" required v-on:change="onChange('class', $event)" />
+                            <label>                                
+                                <select name="flcls" ref="return.class" type="text" placeholder="Flight class" v-on:change="onChange('class', $event)">
+                                    <option :value="f" v-for="(f, index) in ['Economy', 'Business', 'First Class']">{{ f }}</option>
+                                </select>
                             </label>
                             <label>
                                 <input name="passnum" ref="return.passengers" type="number" min="0" max="10" placeholder="Number of passengers" required v-on:change="onChange('passengers', $event)" />
@@ -73,7 +75,9 @@
                     </label>
 
                     <label>
-                        <input name="flcls" ref="oneway.class" type="text" placeholder="Flight Class" list="class" v-on:change="onChange('class', $event)" required />
+                    <select name="flcls" ref="oneway.class" type="text" placeholder="Flight class" v-on:change="onChange('class', $event)">
+                                    <option :value="f" v-for="(f, index) in ['Economy', 'Business', 'First Class']">{{ f }}</option>
+                                </select>
                     </label>
 
                     <label>
