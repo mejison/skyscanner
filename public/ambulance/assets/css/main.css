@@ -340,3 +340,85 @@ select {
   width: 25%;
   margin: 0 10px 15px 0;
 }
+
+.search-results {
+  display: flex !important;
+  height: unset !important;
+}
+
+.search-results .section {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transform: translateX(0);
+  transition: transform .3s;
+}
+
+.search-results .section.left {
+  max-width: 300px !important;
+}
+
+.search-results .section.hide {
+  transform: translateX(100%);
+  width: 0% !important;
+}
+
+.airline-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  max-width: 1200px;
+  align-items: center;
+}
+
+.travler,
+.contact-details {
+  box-shadow: 0 2px 2px 0 rgba(5,35,49,.12), 0 0 2px 0 rgba(5,35,49,.14);
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.travler .header {
+  border-bottom: 1px solid rgba(5,35,49,.12);
+  padding: 15px 30px;
+  color: rgb(59, 59, 59);
+}
+
+.contact-details .header {
+  border-bottom: 1px solid rgba(5,35,49,.12);
+  padding: 15px 30px;
+  color: rgb(59, 59, 59);
+}
+
+.contact-details .body,
+.travler .body {
+  padding: 30px;
+}
+
+.contact-details .gender,
+.travler .gender {
+  margin-bottom: 30px;
+}
+
+.travler .birth .date {
+  display: flex;
+}
+
+.travler .birth .date select {
+  margin: 0 15px;
+}
+
+.travler .birth .date select:first-child {
+  margin-left: 0;
+}
+
+.travler .birth .date select:last-child {
+  margin-right: 0;
+}

@@ -2,6 +2,7 @@
   "require": {
     "guzzlehttp/guzzle": "^7.0",
     "larapack/dd": "1.*",
-    "mpdf/mpdf": "^8.0"
+    "mpdf/mpdf": "^8.0",
+    "digitickets/lalit": "^3.1"
   }
 }

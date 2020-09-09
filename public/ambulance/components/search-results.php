@@ -1,5 +1,5 @@
-<section id="s">
-    <section class="s_left">
+<section id="s" class="search-results">
+    <section class="section left">
         <div id="title">
             <h1>Additional Services</h1>
         </div>
@@ -13,41 +13,42 @@
             </li>
         </ul>
     </section>
-    <section class="s_center">
+    <section class="section center">
         <?php include('filter.php'); ?>
-        <?php include('sort.php'); ?>
-        <div class="flights" v-if="flights.Itineraries && flights.Itineraries.length">
-            <div class="item-flight" v-for="(flight, index) in flightsItinerariesSorted" :key="index">
+        <!-- <?php include('sort.php'); ?> -->
+        <div class="flights" v-if="flights && flights.length">
+            <div class="item-flight" v-for="(flight, index) in flightsItinerariesSorted" :key="index" v-if="flight.AirSegmentRef && flight.AirSegmentRef.length">
                 <div class="airline-name">
                     <div class="logo">
-                        <img :src="getCarrierById(getLedById(flight.OutboundLegId).Carriers[0]).ImageUrl" alt="logo" />
-                    </div>                 
+                        <img :src="`https://www.travelstart.com.ng/assets/img/carriers/retina48px/carrier-${flight.AirSegmentRef[0].Airline}.png`" alt="logo" />
+                    </div>
+                    <div class="name">{{ getCarrierNameByCode(flight.AirSegmentRef[0].Airline).CodeshareInfo }}</div>
                 </div>
                 <div class="flight-time">
                     <span class="start">       
-                        <div v-html="getTimeFromFormat(getLedById(flight.OutboundLegId).Departure)">
+                        <div v-html="flight.AirSegmentRef[0].Depart">
                         </div>                                         
-                        <span class="airport">{{ fromAirPort }} </span>
+                        <span class="airport">{{ flight.AirSegmentRef[0].From }} </span>
                     </span>
                     <span class="arrow">
                         <span class="duration">
-                            {{ parseMinutes(getLedById(flight.OutboundLegId).Duration) }}
+                            Duration
                         </span>
                     </span>
                     <span class="end">
-                        <div v-html="getTimeFromFormat(getLedById(flight.OutboundLegId).Arrival)">
+                        <div v-html="flight.AirSegmentRef[0].Arrive">
                         </div>                        
-                        <span class="airport">{{ toAirPort }} </span>
+                        <span class="airport">{{ flight.AirSegmentRef[0].To }} </span>
                     </span>                                
                 </div>
                 <div class="flight-layover">
-                    {{ getLedById(flight.OutboundLegId).Stops.length ? getStops(getLedById(flight.OutboundLegId).Stops).join(', ') : 'Nonstops' }}
+                    Nonstops
                 </div>
                 <div class="flight-class">
                     {{ classFly }}
                 </div>
                 <div class="flight-price">
-                    {{ currency.Code }}{{ numeral(flight.PricingOptions[0].Price).format('0[,]00') }}
+                    {{ numeral(flight.TotalPrice).format('0[,]00') }}
                 </div>
                 <div class="flight-view">
                     <a href="#" class="view-btn" v-on:click.prevent="onView(flight)">View</a>
@@ -56,17 +57,16 @@
         </div>
         <h3 v-else id="info">No Flight results to display...<br>Click <a href="#" v-on:click="$router.go(-1)">here</a> to go back</h3>
     </section>
-    <section class="s_right">
+    <section class="section right" :class="{'hide': ! isShowRight}">
         <div id="bod" v-if="currentFlight">
             <div id="title" class="current-flight">
                 <h1>Flight Details</h1>
                 <div  class="details">
                     <h2>Ticket price</h2>
-                    <div class="total-price">{{ currency.Code }}{{ numeral(ticketPrice).format('0[,]00') }}</div>
+                    <div class="total-price">{{ numeral(ticketPrice).format('0[,]00') }}</div>
                     <div>
                         for {{ passengers }} Traveller
                     </div>
-                    <!-- <a :href="bookingLink" target="blunk" class="booking-btn">Book this flight</a> -->
                 </div>
             </div>            
         </div>
@@ -74,15 +74,14 @@
             <div class="selected-add-services">
                 <div class="selected-add" v-for="(add, index) in options.additional_service" :key="index">
                     {{ add.name }}
-                    <span class="price">{{ currency.Code }}{{ numeral(add.price).format('0[,]00') }}</span>
+                    <span class="price">{{ numeral(add.price).format('0[,]00') }}</span>
                 </div>
             </div>
             <div class="final-price">
-                <span>{{ currency.Code }}{{ numeral(finalPrice).format('0[,]00') }}</span><br>
+                <span>{{ numeral(finalPrice).format('0[,]00') }}</span><br>
             </div>
             <div class="final">
                 <button class="btn-pay-now" v-on:click.prevent="onClickPayNow">Pay Now</button>
-                <!-- <button class="btn-generate-invoice" v-on:click.prevent="onClickGenerateInvoice">Generate Invoice</button> -->
             </div>
         </div>
         <div id="bod">
@@ -110,34 +109,33 @@
                         {{ locationTo }}
                     </span>
                     <span class="duration">
-                        {{ parseMinutes(getLedById(currentFlight.OutboundLegId).Duration) }}
+                     Duration
                     </span>
                 </div>
                 <div class="carrier">
                     <div class="image">
-                        <img :src="getCarrierById(getLedById(currentFlight.OutboundLegId).Carriers[0]).ImageUrl" />
+                        <img :src="`https://www.travelstart.com.ng/assets/img/carriers/retina48px/carrier-${currentFlight.AirSegmentRef[0].Airline}.png`" />
                     </div>
                     <div class="name">
-                        {{ getCarrierById(getLedById(currentFlight.OutboundLegId).Carriers[0]).Name }}, {{ classFly }}
+                        {{ getCarrierNameByCode(currentFlight.AirSegmentRef[0].Airline).CodeshareInfo }}, {{ classFly }}
                     </div>
                 </div>
                 <div class="times-period">
                     <span class="start">                        
-                        <div v-html="getTimeFromFormat(getLedById(currentFlight.OutboundLegId).Departure)"></div>                        
+                        <div v-html="currentFlight.AirSegmentRef[0].Depart"></div>                        
                         <span class="airport">{{ fromAirPort }} </span>
                     </span>
                     <span class="arrow">
                         <span class="duration">
-                            {{ parseMinutes(getLedById(currentFlight.OutboundLegId).Duration) }}
+                         Duration
                         </span>
                     </span>
                     <span class="end" >
-                        <div v-html="getTimeFromFormat(getLedById(currentFlight.OutboundLegId).Arrival)"></div>
+                        <div v-html="currentFlight.AirSegmentRef[0].Arrive"></div>
                         <span class="airport">{{ toAirPort }} </span>
                     </span>    
                 </div>
             </div>
         </div>
-
     </section>
 </section>

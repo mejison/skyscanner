@@ -39,6 +39,10 @@ class ComposerStaticInit1f599c36573530645fbf384221150db9
         array (
             'Mpdf\\' => 5,
         ),
+        'L' => 
+        array (
+            'LaLit\\' => 6,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -83,6 +87,10 @@ class ComposerStaticInit1f599c36573530645fbf384221150db9
         'Mpdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
+        ),
+        'LaLit\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/digitickets/lalit/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (

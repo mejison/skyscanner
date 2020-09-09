@@ -3,7 +3,7 @@
     $db = new mysqli(
         $host = 'localhost',
         $user = 'root',
-        $password = '',
+        $password = 'x7liruk',
         $database = 'fmta_ambulance',
         $port = '3306'//,
         //$socket = '',

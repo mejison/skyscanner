@@ -2,7 +2,6 @@
 
 require('../../config/server.php');
 $link = "Medical Air Transport";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

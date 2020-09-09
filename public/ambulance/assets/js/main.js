@@ -46,16 +46,29 @@ const global = {
     },
     setFlights: function (state, data) {
       state.flights = data
-    }
+    },
+    setBands: function (state, data) {
+      state.bands = data
+    },
+    setSegments: function (state, data) {
+      state.segments = data
+    },
+    setDetails: function (state, data) {
+      state.details = data
+    },
   },
 
   actions: {
     getFlights: function ({ commit }, params) {
       commit('setFlights', [])
-      return axios.get(`/get-flights.php`, {
+      return axios.get(`/travelport-search.php`, {
         params
       }).then(function (res) {
-        commit('setFlights', res.data)
+        commit('setFlights', res.data.flights);
+        commit('setBands', res.data.bands);
+        commit('setSegments', res.data.segments);
+        commit('setDetails', res.data.details);
+
         $('#recha').remove();
       }).catch(function (error) {
         let { data } = error.response
@@ -147,6 +160,7 @@ const mixins = {
   'search-results': {
     data: function () {
       return {
+        isShowRight: false,
         sort: '',
         sortTypes: [
           {
@@ -254,37 +268,7 @@ const mixins = {
         }, 0)
       },
       flightsItinerariesSorted() {
-        return this.flights.Itineraries.sort((a, b) => {
-          if (this.sort) {
-            if (this.sort == 'cheapest-price') {
-              if (a.PricingOptions && b.PricingOptions) {
-                return a.PricingOptions[0].Price > b.PricingOptions[0].Price ? 1 : -1
-              }
-            }
-
-            if (this.sort == 'most-expensive-price') {
-              if (a.PricingOptions && b.PricingOptions) {
-                return a.PricingOptions[0].Price > b.PricingOptions[0].Price ? -1 : 1
-              }
-            }
-
-            if (this.sort == 'earliest-flight-time') {
-              if (this.getLedById(a.OutboundLegId).Departure > this.getLedById(b.OutboundLegId).Departure) {
-                return 1
-              } else {
-                return -1
-              }
-            }
-
-            if (this.sort == 'late-flight-time') {
-              if (this.getLedById(a.OutboundLegId).Departure > this.getLedById(b.OutboundLegId).Departure) {
-                return -1
-              } else {
-                return 1
-              }
-            }
-          }
-        })
+        return this.flights;
       },
       departureDate() {
         return store.state[store.state.type].departure_date
@@ -296,7 +280,7 @@ const mixins = {
         return this.currentFlight ? this.currentFlight.PricingOptions[0].DeeplinkUrl : '/'
       },
       ticketPrice: function () {
-        return this.currentFlight ? this.currentFlight.PricingOptions[0].Price * this.passengers : 0
+        return this.currentFlight ? this.currentFlight.TotalPrice * this.passengers : 0
       },
       locationFrom: function () {
         return store.state[store.state.type].from
@@ -326,10 +310,19 @@ const mixins = {
       },
       flights: function () {
         return store.state.flights
-      }
+      },
+      segments: function () {
+        return store.state.segments
+      } 
     },
 
     methods: {
+      getCarrierNameByCode(code) {
+        const segment = this.segments.find(function(segment) {
+          return segment.Carrier == code
+        })
+        return segment ? segment : {}
+      },
       getCodeByLocation: function (location) {
         let options = $('#airport option')
         let option = [...options].find(function (item) {
@@ -411,6 +404,7 @@ const mixins = {
         })
       },
       onView: function (flight) {
+        this.isShowRight = true;
         this.currentFlight = flight
       },
       getLedById: function (LegId) {
@@ -439,7 +433,7 @@ const mixins = {
         store.dispatch('getFlights', { ...store.state[store.state.type], type: store.state.type, ...this.filters, from, to })
       },
       onClickPayNow: function () {
-        this.payWithPaystack();
+        location.href = '/request/f?query=' + JSON.stringify(this.$route.query)
       },
       payWithPaystack: function () {
         let handler = PaystackPop.setup({
@@ -514,7 +508,7 @@ const mixins = {
 for (let element of components) {
   getComponent(element).then(function (html) {
     window[element] = { template: html, ...mixins[element] }
-    loaded++
+    loaded ++
 
     if (loaded == components.length) {
       init();
