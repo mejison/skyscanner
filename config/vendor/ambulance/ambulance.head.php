@@ -64,6 +64,7 @@
     <script src="https://unpkg.com/vuex@3.5.1/dist/vuex.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate.js"></script>
 
     <script defer>
         var Tawk_API = Tawk_API || {},

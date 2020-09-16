@@ -1,9 +1,9 @@
 .warpper input.incorrect {
-  border: 1px solid #D7385E;
+  border: 1px solid #d7385e;
 }
 
 .warpper input.correct {
-  border: 1px solid #38CBB3;
+  border: 1px solid #38cbb3;
 }
 
 .filter-additional-services li label {
@@ -30,10 +30,10 @@
   display: flex;
   justify-content: space-between;
   padding: 15px 15px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   margin-bottom: 15px;
-  align-items: center;  
+  align-items: center;
   color: #84939a;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .item-flight .flight-time .start .airport,
-.item-flight .flight-time .end .airport {    
+.item-flight .flight-time .end .airport {
 }
 
 .item-flight .flight-time .start,
@@ -76,7 +76,7 @@
   border-bottom: 2px solid #eee;
   margin: 0 15px;
   min-width: 100px;
-  display: inline-block;  
+  display: inline-block;
   text-align: center;
   position: relative;
 }
@@ -111,7 +111,7 @@
 }
 
 .current-flight .details h2 {
-  color: rgb(25, 184, 237);  
+  color: rgb(25, 184, 237);
   font-size: 23px;
   margin-bottom: 25px;
 }
@@ -119,7 +119,7 @@
 .total-price {
   color: #52c5a1;
   font-weight: bold;
-  font-size: 20px;  
+  font-size: 20px;
 }
 
 .booking-btn {
@@ -144,7 +144,6 @@
   font-weight: 600;
 }
 
-
 .flight-info .location-line .to {
   margin: 0 15px;
   font-weight: 400;
@@ -160,14 +159,12 @@
   margin: 15px 30px 15px 0;
 }
 
-
 .flight-info .carrier {
   font-size: 16px;
   display: flex;
   color: #555;
   align-items: center;
 }
-
 
 .times-period {
   display: flex;
@@ -190,11 +187,10 @@
   border-bottom: 2px solid #eee;
   margin: 0 15px;
   width: 100%;
-  display: inline-block;  
+  display: inline-block;
   text-align: center;
   position: relative;
 }
-
 
 .times-period .arrow .duration {
   position: absolute;
@@ -219,7 +215,7 @@
   border-bottom: 2px solid #eee;
   margin: 0 15px;
   min-width: 100px;
-  display: inline-block;  
+  display: inline-block;
   text-align: center;
   position: relative;
 }
@@ -231,7 +227,7 @@
   top: 5px;
 }
 
-#title h1{
+#title h1 {
   margin: 0;
   padding: 0;
 }
@@ -244,7 +240,7 @@
   margin: 30px 0;
   color: #52c5a1;
   font-weight: bold;
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 .final .btn-pay-now,
@@ -257,8 +253,8 @@
   display: flex;
   justify-content: space-between;
   background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   margin-bottom: 30px;
   align-items: center;
 }
@@ -270,12 +266,12 @@
   margin: unset !important;
   min-width: 50px;
   max-width: 100px;
-  width: auto !important;  
+  width: auto !important;
 }
 
 .search-btn {
   font-size: 20px;
-  color: rgb(25, 184, 237);  
+  color: rgb(25, 184, 237);
 }
 
 .selected-add-services {
@@ -283,14 +279,14 @@
 }
 
 .selected-add-services .selected-add {
-  display: flex;  
+  display: flex;
 }
 
 .selected-add .price {
   margin-left: auto;
 }
 
-#s section.s_left {  
+#s section.s_left {
   width: 20%;
 }
 
@@ -299,7 +295,7 @@
   display: block;
 }
 
-#s section.s_right {  
+#s section.s_right {
   width: 25%;
 }
 
@@ -324,10 +320,10 @@
 }
 
 select {
-  border: 1px solid rgb(206 206 206);  
+  border: 1px solid rgb(206 206 206);
   color: rgb(88, 88, 88);
   background-color: #ffffff;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   width: 100%;
   margin: 10px 0;
   font-size: 14px;
@@ -351,7 +347,7 @@ select {
   display: flex !important;
   flex-direction: column !important;
   transform: translateX(0);
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 
 .search-results .section.left {
@@ -380,19 +376,41 @@ select {
 
 .travler,
 .contact-details {
-  box-shadow: 0 2px 2px 0 rgba(5,35,49,.12), 0 0 2px 0 rgba(5,35,49,.14);
+  box-shadow: 0 2px 2px 0 rgba(5, 35, 49, 0.12), 0 0 2px 0 rgba(5, 35, 49, 0.14);
   width: 100%;
   margin-bottom: 30px;
 }
 
 .travler .header {
-  border-bottom: 1px solid rgba(5,35,49,.12);
+  border-bottom: 1px solid rgba(5, 35, 49, 0.12);
   padding: 15px 30px;
   color: rgb(59, 59, 59);
 }
 
+.travler .footer {
+  border-bottom: 1px solid rgba(5, 35, 49, 0.12);
+  padding: 15px 30px;
+  color: rgb(59, 59, 59);
+}
+
+.add-travler {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.add-travler img {
+  width: auto;
+  margin-right: 15px;
+}
+
+.travler .footer a {
+  color: rgb(59, 59, 59);
+  font-size: 16px;
+}
+
 .contact-details .header {
-  border-bottom: 1px solid rgba(5,35,49,.12);
+  border-bottom: 1px solid rgba(5, 35, 49, 0.12);
   padding: 15px 30px;
   color: rgb(59, 59, 59);
 }
@@ -421,4 +439,20 @@ select {
 
 .travler .birth .date select:last-child {
   margin-right: 0;
+}
+
+input.has-error,
+select.has-error {
+  border: 1px solid #bb4040;
+}
+
+.error-label {
+  color: #c72929;
+}
+
+.disabled {
+  user-select: none;
+  pointer-events: none;
+  border: 1px solid #ccc;
+  color: #ccc;
 }
